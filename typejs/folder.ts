@@ -4,18 +4,16 @@ export class Folder {
   private nameFolder: string[] = [];
   private listCards = [];
   constructor() {
-   
     let create = document.getElementsByClassName("createfoder")[0];
-    console.log(create);
-    if(create!=undefined) {
-    this.reloadFunctionFolder();
-    this.createFolder();
-    this.getFolderCreated();
-    this.addFolder();
+  
+    if (create != undefined) {
+      this.reloadFunctionFolder();
+      this.createFolder();
+      this.getFolderCreated();
+      this.addFolder();
     }
   }
   private createFolder() {
-
     const inputNameFolder = document.getElementById(
       "input_folder"
     ) as HTMLInputElement;
@@ -62,7 +60,6 @@ export class Folder {
     create.addEventListener("click", function () {
       if (newfolder) newfolder.style.display = "block";
     });
-  
   }
   private getFolderCreated() {
     const add = document.getElementsByClassName("folder_add")[0] as HTMLElement;
@@ -70,12 +67,10 @@ export class Folder {
     this.nameFolder = folderKeys;
     for (let i = 0; i < this.nameFolder.length; i++) {
       const storedItem = localStorage.getItem(folderKeys[i]);
-      console.log(folderKeys[i]);
       if (storedItem) {
         const parsedItem = JSON.parse(storedItem);
         const status = parsedItem.status;
         if (status) {
-          console.log(this.nameFolder);
           const folderElement = this.addFolder(this.nameFolder[i]);
           add.appendChild(folderElement);
           this.addRenameAndTrash(folderElement, folderKeys[i]);
@@ -111,11 +106,9 @@ export class Folder {
     )[0] as HTMLElement;
 
     const childElement = moreList as HTMLElement;
-    // Làm việc với thẻ con
-    console.log(childElement.children[0]);
+
     childElement.children[0].addEventListener("click", () => {
       const storedItem = localStorage.key(key);
-      console.log(storedItem);
     });
 
     moreDisplay.addEventListener("click", (event) => {
@@ -138,8 +131,6 @@ export class Folder {
       document.body.addEventListener("click", bodyClickHandler);
     });
   }
-  private renameFolder(name) {
-    console.log(name);
-  }
+  private renameFolder(name) {}
   private trashFolder() {}
 }

@@ -4,7 +4,6 @@ export class Folder {
         this.nameFolder = [];
         this.listCards = [];
         let create = document.getElementsByClassName("createfoder")[0];
-        console.log(create);
         if (create != undefined) {
             this.reloadFunctionFolder();
             this.createFolder();
@@ -49,12 +48,10 @@ export class Folder {
         this.nameFolder = folderKeys;
         for (let i = 0; i < this.nameFolder.length; i++) {
             const storedItem = localStorage.getItem(folderKeys[i]);
-            console.log(folderKeys[i]);
             if (storedItem) {
                 const parsedItem = JSON.parse(storedItem);
                 const status = parsedItem.status;
                 if (status) {
-                    console.log(this.nameFolder);
                     const folderElement = this.addFolder(this.nameFolder[i]);
                     add.appendChild(folderElement);
                     this.addRenameAndTrash(folderElement, folderKeys[i]);
@@ -84,11 +81,8 @@ export class Folder {
         const moreDisplay = folderElement.getElementsByClassName("folder_add_white_more")[0];
         const moreList = folderElement.getElementsByClassName("folder_add_white_more_list")[0];
         const childElement = moreList;
-        // Làm việc với thẻ con
-        console.log(childElement.children[0]);
         childElement.children[0].addEventListener("click", () => {
             const storedItem = localStorage.key(key);
-            console.log(storedItem);
         });
         moreDisplay.addEventListener("click", (event) => {
             event.stopPropagation();
@@ -105,8 +99,6 @@ export class Folder {
             document.body.addEventListener("click", bodyClickHandler);
         });
     }
-    renameFolder(name) {
-        console.log(name);
-    }
+    renameFolder(name) { }
     trashFolder() { }
 }

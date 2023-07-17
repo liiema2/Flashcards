@@ -1,13 +1,10 @@
 export class card {
     constructor() {
         this.value = [];
-        const homeValue = localStorage.getItem("home");
-        if (homeValue === "1") {
-            this.createCard();
-        }
+        this.createCard();
     }
     createCard() {
-        // console.log("card created");
+        const homeValue = localStorage.getItem("home");
         const buttons = document.querySelectorAll(".fixed-button")[0];
         const add = document.querySelector(".input_flashcard_add");
         buttons.addEventListener("click", () => {
@@ -19,7 +16,6 @@ export class card {
             const div1Text = document.createElement("div");
             div1Text.textContent = "1";
             div1Inner.appendChild(div1Text);
-            console.log(div1Inner);
             div1.appendChild(div1Inner);
             const div2 = document.createElement("div");
             // div1Inner.appendChild(div2);
@@ -39,7 +35,7 @@ export class card {
             div3.className = "input_flashcard_add_img_delete";
             const div3Inner = document.createElement("div");
             const deleteImg = document.createElement("img");
-            deleteImg.src = "./img/delete.png";
+            deleteImg.src = "../img/delete.png";
             deleteImg.alt = "";
             div3Inner.appendChild(deleteImg);
             div3.appendChild(div3Inner);
@@ -53,24 +49,6 @@ export class card {
             add.appendChild(cardContainer);
         });
     }
-    set setName(value) {
-        this.name = value;
-    }
-    set setDescription(value) {
-        this.description = value;
-    }
-    set setImg(value) {
-        this.img = value;
-    }
-    get getImg() {
-        return this.img;
-    }
-    get getDescription() {
-        return this.getDescription;
-    }
-    get getName() {
-        return this.name;
-    }
     remove(name, description, img) {
         if (name == "") {
             this.name = "";
@@ -82,7 +60,6 @@ export class card {
             this.img = "";
         }
     }
-    add(name, description, img) { }
     addCreateCards() {
         let button = document.getElementsByClassName("fixed-button")[0];
         let form = document.getElementsByClassName("new_ADD_Folder_card")[0];
