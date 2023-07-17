@@ -1,0 +1,126 @@
+.fixed-button {
+    position: fixed;
+    right: 50px;
+    bottom: 100px;
+    /* z-index: 9999; */
+  }
+  .main_header_createflashcard {
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    /* align-items: center; */
+  }
+  /* .main_header_createflashcard >div{
+    width: 100%;
+    display: flex;
+  
+  } */
+.main_header_createflashcard div h2{
+    font-size: 3rem;
+}
+.main_header_createflashcard .button_create{
+  border-radius: 1rem;
+  background-color: black;
+  color: aliceblue;
+  width: 5rem;
+  height: 1.25rem;
+  text-align: center;
+  padding: 0.5rem;
+}
+.main_header_create{
+    display: flex;
+}
+.main_header_create_title{
+    width: 50%;
+    margin-left: 1rem;
+}
+.main_header_create_description{
+    width: 50%;
+
+}
+.main_header_create_title input{
+   border-radius: 1rem;
+   width: 50%;
+   padding: 0.5rem;
+}
+.main_header_create_description input{
+    border-radius: 1rem;
+    width: 50%;
+    padding: 0.5rem;
+}
+#input_flashcard{
+    margin-top: 3rem;
+    margin-left: 1rem;
+}
+.input_flashcard_add_header{
+
+    width: 80%;
+    background-color:#FFF;
+    border-radius: 1rem;
+    height: 8rem;
+    display: flex;
+    justify-content: space-between;
+}
+.input_flashcard_add_header1 {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+}
+.input_flashcard_add_header1 >div{ 
+margin-left: 1rem;
+margin-right: 1rem;
+
+width: 80%;
+
+}
+.input_flashcard_add_header1 >div:nth-child(2){ 
+
+text-align: right;
+
+
+}
+#image-upload {
+    position: absolute;
+    top:0;
+    color: transparent;
+    font-size: 0;
+
+    /* display: inline-block;
+    background-size: cover;
+    background-position: center; */
+    opacity: 0;
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+
+  }
+  .input_flashcard_add_img {
+    display: flex;
+    height: 2rem;
+  }
+  .input_flashcard_add_img div{
+    border: 1px solid #c2c2c2;
+    margin-top: 0;
+    position: relative;
+    width: 2rem;
+    background-image: url(./img/image-gallery.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0.25rem;
+    /* transform: 50% 50%; */
+  }
+    .input_flashcard_add_img >input {
+        margin-left: 3rem;
+        border: none;
+        border-bottom: 1px solid #c2c2c2;
+        outline: none;
+        width: 50%;
+    }
+    .input_flashcard_add_img_delete input{
+        border: none;
+        border-bottom: 1px solid #c2c2c2;
+        outline: none;
+        width: 50%;
+    }

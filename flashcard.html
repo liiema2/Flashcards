@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@700&display=swap" rel="stylesheet">
 <body>
     <header>
         <nav>
@@ -44,49 +44,91 @@
         </div>
         <div class="folder_add">
 
-            <div class="folder_add_new">
-                <div class="folder_add_white">
-                    <div><img src="./img/folder.png" alt=""></div>
-                    <div>Folder1</div>
-                    <div class="folder_add_white_more"><img src="./img/more.png" alt=""></div>
-                    <!-- style="display:none" -->
-                    <div class="folder_add_white_more_list"style="display:none" >
-                        <div>Rename</div>
-                        <div>Trash</div>
-
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="folder_add_new">
-                <div class="folder_add_white">
-                    <div><img src="./img/folder.png" alt=""></div>
-                    <div>Folder1</div>
-                    <div class="folder_add_white_more"><img src="./img/more.png" alt=""></div>
-                    <div class="folder_add_white_more_list"style="display:none" >
-                        <div>Rename</div>
-                        <div>Trash</div>
-
-                    </div>
-                </div>
 
 
             </div>
 
         </div>
-            <!-- cards -->
+            <!-- cards -->  
         <div>flashcards</div>
+        <div id="flashcard_add">
+                <div class="flashcard_add_new">
+                    <div class="flashcard_add_new_icon">
+                        <img src="./img/flash-cards.png" alt=""> <p>cards</p>
 
-        <div class="newfolder">
+
+                    </div>
+                    <div class="flashcard_add_new_icon_desciption" > 
+                        newfolder
+                    </div>
+                    <div >
+
+                        <img src="./img/more.png" alt="">
+                    </div>
+
+                </div>
+                <div class="flashcard_add_new">
+                    <div class="flashcard_add_new_icon">
+                        <img src="./img/flash-cards.png" alt=""> <p>cards</p>
+
+
+                    </div>
+                    <div class="flashcard_add_new_icon_desciption" > 
+                        newfolder
+                    </div>
+                    <div >
+
+                        <img src="./img/more.png" alt="">
+                    </div>
+
+                </div>
+
+        </div>
+        <div class="new_ADD_Folder_card"  style="display: none;">
+            <div>
+
+
+                <div class="new_ADD_flash_card">
+                    <div class="new_ADD_flash_card1">
+                        <img src="./img/flash-card (1).png" alt="">
+                    </div>
+                    <div>
+                        <div>create flashcard</div>
+                        <p>create a new flashcard</p>
+                    </div>
+                </div>
+                <div class="new_ADD_flash_card">
+                    <div class="new_ADD_flash_card2">
+                        <img src="./img/flash-card (1).png" alt="">
+                    </div>
+                    <div>
+                        <div>create note</div>
+                        <p>create a new note</p>
+                    </div>
+                </div>
+                <!-- <div class="new_ADD_flash_card">
+                    <div class="new_ADD_flash_card1">
+                        <img src="./img/flash-card (1).png" alt="">
+                    </div>
+                    <div>
+                        <div>create flashcard</div>
+                        <p>create a new flashcard</p>
+                    </div>
+                </div> -->
+               
+            </div>
+
+        </div>
+        <div class="newfolder" style="display: none;">
             <div class="newfolder-opacity">
                 <div class="newfolder_card">
 
                     <p>new folder</p>
-                    <input type="text">
-                    <div>
-                        <button>cancel</button>
-                        <button>create</button>
+                    <input id="input_folder" type="text">
+                    <div class="newfolder_card_cancel">
+                        <button class="newfolder_card_cancel_button">cancel</button>
+                    
+                        <button class="newfolder_card_create_button">create</button>
                     </div>
                 </div>
             </div>
@@ -100,7 +142,7 @@
     </main>
     <footer></footer>
 </body>
-<script src="./js/animation.js"></script>
-<script src="./js/Create.js"></script>
 
+<script src="./js/use.js" type="module"></script>
+<!-- <script  src="./js/function.js"></script> -->
 </html>
