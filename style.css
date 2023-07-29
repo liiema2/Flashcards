@@ -19,6 +19,9 @@ nav {
   width: 5rem;
   height: 5rem;
 }
+main >div{
+  margin-left: 1rem;
+}
 .search {
   /* margin-right: 12rem; */
   box-shadow: none;
@@ -317,6 +320,7 @@ main div {
   
   border-radius: 1rem;
   display: flex;
+  flex-wrap: wrap;
 }
 .flashcard_add_new{
   width: 20rem;

@@ -49,12 +49,18 @@ export class Folder {
         for (let i = 0; i < this.nameFolder.length; i++) {
             const storedItem = localStorage.getItem(folderKeys[i]);
             if (storedItem) {
-                const parsedItem = JSON.parse(storedItem);
-                const status = parsedItem.status;
-                if (status) {
-                    const folderElement = this.addFolder(this.nameFolder[i]);
-                    add.appendChild(folderElement);
-                    this.addRenameAndTrash(folderElement, folderKeys[i]);
+                try {
+                    const parsedItem = JSON.parse(storedItem);
+                    if (typeof parsedItem === 'object' && parsedItem !== null) {
+                        const status = parsedItem.status;
+                        if (status) {
+                            const folderElement = this.addFolder(this.nameFolder[i]);
+                            add.appendChild(folderElement);
+                            this.addRenameAndTrash(folderElement, folderKeys[i]);
+                        }
+                    }
+                }
+                catch (error) {
                 }
             }
         }

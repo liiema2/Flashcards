@@ -1,6 +1,7 @@
 export class card {
     constructor() {
         this.value = [];
+        this.const1 = 0;
         this.createCard();
     }
     createCard() {
@@ -8,13 +9,14 @@ export class card {
         const buttons = document.querySelectorAll(".fixed-button")[0];
         const add = document.querySelector(".input_flashcard_add");
         buttons.addEventListener("click", () => {
+            this.setIndex();
             const cardContainer = document.createElement("div");
             cardContainer.className = "input_flashcard_add_header";
             const div1 = document.createElement("div");
             div1.className = "input_flashcard_add_header1";
             const div1Inner = document.createElement("div");
             const div1Text = document.createElement("div");
-            div1Text.textContent = "1";
+            div1Text.textContent = this.const1;
             div1Inner.appendChild(div1Text);
             div1.appendChild(div1Inner);
             const div2 = document.createElement("div");
@@ -48,6 +50,9 @@ export class card {
             cardContainer.appendChild(div1);
             add.appendChild(cardContainer);
         });
+    }
+    setIndex() {
+        this.const1++;
     }
     remove(name, description, img) {
         if (name == "") {

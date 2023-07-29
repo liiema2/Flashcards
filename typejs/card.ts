@@ -3,16 +3,19 @@ export class card {
   private description: string;
   private img: string;
   private value = [];
+  private const1:any=0;
   constructor() {
     this.createCard();
   }
-  createCard() {
+  createCard() {  
+    
+ 
     const homeValue = localStorage.getItem("home");
-
     const buttons = document.querySelectorAll(".fixed-button")[0];
     const add = document.querySelector(".input_flashcard_add");
 
     buttons.addEventListener("click", () => {
+      this.setIndex();
       const cardContainer = document.createElement("div");
       cardContainer.className = "input_flashcard_add_header";
 
@@ -20,7 +23,7 @@ export class card {
       div1.className = "input_flashcard_add_header1";
       const div1Inner = document.createElement("div");
       const div1Text = document.createElement("div");
-      div1Text.textContent = "1";
+      div1Text.textContent =  this.const1;
       div1Inner.appendChild(div1Text);
      
       div1.appendChild(div1Inner);
@@ -61,6 +64,9 @@ export class card {
 
       add.appendChild(cardContainer);
     });
+  }
+  setIndex(){
+    this.const1++;
   }
   
   remove(name: string, description: string, img: string) {

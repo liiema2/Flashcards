@@ -4,8 +4,242 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../card.css">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@700&display=swap" rel="stylesheet">
+    <style>
+        .hidden {
+          display: none;
+        }
+      </style>
 </head>
+
+ 
+   
 <body>
-    
+    <header>
+        <nav>
+            <div class="logo"><a href="../flashcard.html"><img  id="home"src="../img/logo.png" alt=""></a></div>
+            <div class="information">
+                <div class="search"><input class="inputSearch" type="text" placeholder="Search note flashcards"></div>
+                <div>Home</div>
+                <div class="question"><a href=""><img src="../img/question-mark_57108.png" alt=""></a></div>
+                <div class="bell"> <a href=""><img src="../img/bell_3602123.png" alt=""></a></div>
+                <div class="user"><a href=""><img src="../img/user_456212.png" alt=""></a></div>
+            </div>
+
+        </nav>
+    </header>
+    <main>
+
+       <div id="body_crad">
+     
+        <div class="body_crad_left">
+          <div class="row_left"><img src="../img/arrow.png" alt=""></div>
+          <div class="created_card" onclick="toggleCard()" >
+           <div class="created_card_body_input">thẻ trên</div>
+           <div class="body_crad_number_page"></div>
+            </div>
+            <!-- style="transition-duration: 0ms; transform: translate3d(100px, 0px, 0px);" -->
+            <div id="hidden_card" onclick="toggleCard()" class="hidden created_card" >
+              <div class="created_card_body_input">Thẻ dưới </div>
+              <div class="body_crad_number_page"></div>
+            </div>
+            
+          <div class="row_right"><img src="../img/right-arrow.png" alt=""></div>
+
+      </div>
+  
+      <div class="fuoction">
+          <div >
+           <div>chức năng 1</div>
+            </div>
+            <div >
+              <div>chức năng 2 </div>
+            </div>
+          <div >
+           <div>chức năng 3</div>
+            </div>
+            <div >
+              <div>năng 3 </div>
+            </div>
+      </div>
+
+       </div>
+           
+        
+          
+    </main>
+        
+   
 </body>
+
+<script>
+   
+
+var isUpperHidden = true;
+var hiddenCard = document.getElementById("hidden_card");
+  var upperCard = document.querySelector('.created_card');
+  let changeCard=true
+function toggleCard() {
+ 
+changeCard=!changeCard;
+  if (isUpperHidden) {
+    // Ẩn upperCard và hiện hiddenCard
+    hiddenCard.classList.remove("hidden");
+    hiddenCard.classList.add("animation-style");
+    upperCard.classList.remove("animation-style");
+    upperCard.classList.add("hidden");
+  } else {
+    // Ẩn hiddenCard và hiện upperCard
+    upperCard.classList.remove("hidden");
+    hiddenCard.classList.remove("animation-style");
+    upperCard.classList.add("animation-style");
+    hiddenCard.classList.add("hidden");
+   
+   
+  }
+
+  // Đảo ngược giá trị của isUpperHidden
+  isUpperHidden = !isUpperHidden;
+}
+let clickRight=0
+let clickLeft=0
+function checked() {
+  const checked = localStorage.getItem("check"); 
+console.log(checked); 
+ const keys = Object.keys(localStorage);
+    const filteredKeys = keys.filter((key) => {
+      return key.includes(checked.toString());
+    });
+console.log(filteredKeys);
+
+const value=localStorage.getItem(filteredKeys);
+const card1=document.getElementsByClassName("created_card_body_input")[0];
+const card2=document.getElementsByClassName("created_card_body_input")[1];
+let data =JSON.parse(value)  
+let getIndex =0;
+let cureIndex =1;
+for (const key in data) {
+  console.log(`${key}: ${data[key]}`);
+  getIndex++;
+}
+
+let indexDat=0;
+const firstKey = Object.keys(data)[indexDat];
+const firstValue = data[firstKey];
+console.log(`${firstKey}: ${firstValue}`);
+card1.innerHTML = firstKey;
+  card2.innerHTML = firstValue;
+
+const page = document.getElementsByClassName('body_crad_number_page')[0]; 
+const page1 = document.getElementsByClassName('body_crad_number_page')[1]; 
+let row_right = document.getElementsByClassName('row_right')[0];
+let row_left = document.getElementsByClassName('row_left')[0];
+page.innerHTML =`${cureIndex}/${getIndex}`;
+
+page1.innerHTML =`${cureIndex}/${getIndex}`;
+row_right.addEventListener('click',function(){
+ 
+  clickRight++;
+  if(cureIndex <getIndex) {
+    indexDat++;
+  cureIndex++;
+  const firstKey = Object.keys(data)[indexDat];
+const firstValue = data[firstKey];
+console.log(`${firstKey}: ${firstValue}`);
+card1.innerHTML = firstKey;
+  card2.innerHTML = firstValue;
+  page.innerHTML =`${cureIndex}/${getIndex}`;
+
+page1.innerHTML =`${cureIndex}/${getIndex}`;
+// isUpperHidden = !isUpperHidden; 
+if(!changeCard){
+  isUpperHidden = !isUpperHidden;
+
+toggleCard();
+  } 
+  if (!isUpperHidden) {
+   
+  
+    upperCard.classList.remove("hidden");
+    hiddenCard.classList.add("hidden");
+  isUpperHidden = !isUpperHidden;
+
+  } 
+//   // isUpperHidden = !isUpperHidden;
+// if(clickRight%2==0)
+// {
+  // upperCard.classList.remove("hidden");
+  // hiddenCard.classList.add("hidden");
+  //   upperCard.classList.add("hidden");
+  // hiddenCard.classList.remove("hidden");
+
+  
+
+//   upperCard.classList.add("hidden");
+//   hiddenCard.classList.remove("hidden");
+
+  
+// }
+//   else
+//   {
+//   //   upperCard.classList.add("hidden");
+//   // hiddenCard.classList.remove("hidden");
+//   }
+  // isUpperHidden = !isUpperHidden;
+  // toggleCard()
+  }
+  
+})
+row_left.addEventListener('click',function(){
+  
+  if(cureIndex >1) {
+    indexDat--;
+  cureIndex--;
+  const firstKey = Object.keys(data)[indexDat];
+const firstValue = data[firstKey];
+console.log(`${firstKey}: ${firstValue}`);
+card1.innerHTML = firstKey;
+  card2.innerHTML = firstValue;
+  page.innerHTML =`${cureIndex}/${getIndex}`;
+
+page1.innerHTML =`${cureIndex}/${getIndex}`;
+
+  
+  
+  // toggleCard()
+  }
+  if(!changeCard){
+  isUpperHidden = !isUpperHidden;
+
+toggleCard();
+  } 
+  if (!isUpperHidden) {
+   
+  
+    upperCard.classList.remove("hidden");
+    hiddenCard.classList.add("hidden");
+    isUpperHidden = !isUpperHidden;
+
+  } 
+  
+})
+
+console.log(getIndex);
+
+
+
+
+
+}
+
+
+checked();
+
+
+  </script>
+  
+ 
 </html>

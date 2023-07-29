@@ -1,0 +1,93 @@
+.created_card {
+    width: 30rem;
+    height: 20rem;
+    background-color: white !important;
+    margin: 0 auto ;
+    border-radius: 1rem;
+    text-align: center;
+    align-items: center;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    position: relative;
+    font-family: inherit;
+    font-weight: 400;
+}
+@keyframes rotateIn {
+    from {
+      transform: rotateX(350deg);
+    }
+    to {
+      transform: rotateX(0);
+    }
+  }
+  
+  /* Lớp CSS cho animation */
+  .animation-style {
+    transform-style: preserve-3d;
+    animation: rotateIn 1s ease;
+  }
+  
+main{
+    margin-top: 1rem;
+ 
+}
+main div{
+   margin-top: 2rem;
+   height: auto ;
+}
+.created_card div{
+  position: 1rem;
+}
+
+#body_crad {
+    display: flex;
+    width: 80%;
+    margin: 0 auto !important;
+    justify-content: space-between;
+   
+
+}
+.body_crad_left  {
+    display: flex;
+    align-items: center !important;
+    /* max-width:  300px;
+    width: 10rem; */
+}
+.row_left{
+    /* background-color: #FFF;
+    border-radius: 50%;
+    padding: 1rem;
+    align-items: center; */
+    padding: 1rem;
+
+}
+.row_right{
+    /* background-color: #FFF;
+    border-radius: 50%; */
+    padding: 1rem;
+    
+}
+.fuoction {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: 0;
+}
+.fuoction div>div{
+   background-color: #FFF;
+}
+.fuoction div{
+   
+       padding: 3rem;
+   text-align: center !important;
+   /* margin-top: 0; */
+}
+.fuoction div>div{
+   margin-top: 0;
+border-radius: 1rem;
+}
+.body_crad_number_page{
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+}
